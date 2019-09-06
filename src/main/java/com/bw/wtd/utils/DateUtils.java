@@ -3,6 +3,13 @@ package com.bw.wtd.utils;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * 
+ * @ClassName:     DateUtils   
+ * @Description:   TODO
+ * @author:        WTD
+ * @date:          2019年9月6日 下午2:19:37
+ */
 public class DateUtils {
 	
 	/**
