@@ -1,4 +1,4 @@
-package com.bw.wtd.utils;
+package com.bw.wangtiandong.utils;
 
 import java.util.Random;
 import java.util.UUID;

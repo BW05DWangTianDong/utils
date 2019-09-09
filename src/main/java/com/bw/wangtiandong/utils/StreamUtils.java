@@ -1,4 +1,4 @@
-package com.bw.wtd.utils;
+package com.bw.wangtiandong.utils;
 
 import java.io.Closeable;
 import java.io.IOException;
