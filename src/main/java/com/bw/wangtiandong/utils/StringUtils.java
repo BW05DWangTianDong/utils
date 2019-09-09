@@ -2,12 +2,13 @@ package com.bw.wangtiandong.utils;
 
 import java.util.Random;
 import java.util.UUID;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * 
- * @author zhuzg
+ * @author wtd
  *
  */
 public class StringUtils {
@@ -217,7 +218,25 @@ public class StringUtils {
 	}
 	
 	
-	
+	public static String toHtml1(String text) {
+		
+		String[] strings = text.split("(\\\n|\\\n\\\r)");
+		
+		StringBuilder sb= new StringBuilder();
+		for (String string : strings) {
+			sb.append("<p>").append(text).append("</p>");
+		}
+		
+		String[] strings2 = sb.toString().split("\\\r");
+		
+		for (String string : strings2) {
+			sb.append("<br>").append(text).append("</br>");
+		}
+		
+		System.out.println(sb.toString());
+		
+		return sb.toString();
+	}
 	
 	
 }
