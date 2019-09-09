@@ -8,15 +8,22 @@ import java.util.regex.Pattern;
 
 /**
  * 
- * @author wtd
- *
+ * @ClassName:     StringUtils   
+ * @Description:   TODO
+ * @author:        WTD
+ * @date:          2019年9月9日 上午9:53:03
  */
 public class StringUtils {
 	
 	/**
 	 * 
-	 * @param src
-	 * @return
+	 * @Title:         toHtml   
+	 * @Description:   TODO
+	 * @param:         @param src
+	 * @param:         @return      
+	 * @return:        String     
+	 * @date:          2019年9月9日 上午9:52:59   
+	 * @throws
 	 */
 	public static String toHtml(String src) {
 		
@@ -32,9 +39,14 @@ public class StringUtils {
 	}
 	
 	/**
-	 *  
-	 * @param str
-	 * @return  
+	 * 
+	 * @Title:         isEmpty   
+	 * @Description:   TODO
+	 * @param:         @param str
+	 * @param:         @return      
+	 * @return:        boolean     
+	 * @date:          2019年9月9日 上午9:53:09   
+	 * @throws
 	 */
 	public static  boolean isEmpty(String str) {
 		
@@ -43,21 +55,28 @@ public class StringUtils {
 	
 	
 	/**
-	 * �Ƿ���ֵ
-	�ж�Դ�ַ����Ƿ���ֵ�������źͿո�Ҳ��ûֵ
-	 * @param str
-	 * @return
+	 * 
+	 * @Title:         isHasValue   
+	 * @Description:   TODO
+	 * @param:         @param str
+	 * @param:         @return      
+	 * @return:        boolean     
+	 * @date:          2019年9月9日 上午9:53:13   
+	 * @throws
 	 */
 	public static boolean isHasValue(String str) {
 		
-		// ��������д������
-		//return !(null ==str || "".equals(str.trim()));
 		return (null !=str && !"".equals(str.trim()));
 	}
 	/**
 	 * 
-	 * @param str
-	 * @return
+	 * @Title:         isTelephone   
+	 * @Description:   TODO
+	 * @param:         @param str
+	 * @param:         @return      
+	 * @return:        boolean     
+	 * @date:          2019年9月9日 上午9:53:19   
+	 * @throws
 	 */
 	public static boolean isTelephone(String str) {
 		String pattern = "^(136|135|137)\\d{8}$";
@@ -65,9 +84,14 @@ public class StringUtils {
 	}
 	
 	/**
-	 *  
-	 * @param str
-	 * @return
+	 * 
+	 * @Title:         isEmail   
+	 * @Description:   TODO
+	 * @param:         @param str
+	 * @param:         @return      
+	 * @return:        boolean     
+	 * @date:          2019年9月9日 上午9:53:23   
+	 * @throws
 	 */
 	public static boolean isEmail(String str) {
 		
@@ -78,9 +102,14 @@ public class StringUtils {
 	}
 	
 	/**
-	 * ��֤ȫΪ��ĸ
-	 * @param str
-	 * @return
+	 * 
+	 * @Title:         isLetter   
+	 * @Description:   TODO
+	 * @param:         @param str
+	 * @param:         @return      
+	 * @return:        boolean     
+	 * @date:          2019年9月9日 上午9:53:27   
+	 * @throws
 	 */
 	public static boolean isLetter(String str) {
 		String pattern = "^[a-zA-Z]+$";
@@ -89,9 +118,13 @@ public class StringUtils {
 	
 	/**
 	 * 
-	 * ��ȡnλ���Ӣ���ַ���
-	 * @param n
-	 * @return
+	 * @Title:         randomLetterStr   
+	 * @Description:   TODO
+	 * @param:         @param n
+	 * @param:         @return      
+	 * @return:        String     
+	 * @date:          2019年9月9日 上午9:53:31   
+	 * @throws
 	 */
 	public String randomLetterStr(int n) {
 		
@@ -108,36 +141,42 @@ public class StringUtils {
 	}
 	
 	/**
-	 * ��ȡnλ���Ӣ�ĺ������ַ���
-	 * @param n
-	 * @return
+	 * 
+	 * @Title:         randomStr   
+	 * @Description:   TODO
+	 * @param:         @param n
+	 * @param:         @return      
+	 * @return:        String     
+	 * @date:          2019年9月9日 上午9:53:36   
+	 * @throws
 	 */
 	public String randomStr(int n) {
 		
 		char chars[]= {'0','1','2','3','4','5','6','7','8','9',
 				'A','B','C','D','E','F','G','H','I','J','K','L','M','N'};
 		
-		// ������������
 		Random random = new Random();
 		StringBuilder sb = new StringBuilder();
 		
 		for(int i=0;i<n;i++) {
-			// ����õ�һ���±꣬�����±�����鵱�л�ȡֵ��ƴ�ӵ��ַ�����
-			
-			// �����ȡһ���±�
 			int index = random.nextInt(chars.length);
 			char c = chars[index];
-			sb.append(c);//���ƴ��
-			
-			/*sb.append( chars[random.nextInt(chars.length)]
-					);*/
+			sb.append(c);
 			
 		}
 		return sb.toString();
 		
 	}
-	
-	//��ȡn����������ַ���
+	/**
+	 * 
+	 * @Title:         getRandonCnStr   
+	 * @Description:   TODO
+	 * @param:         @param n
+	 * @param:         @return      
+	 * @return:        String     
+	 * @date:          2019年9月9日 上午9:53:53   
+	 * @throws
+	 */
 	public static String getRandonCnStr(int n) {
 		
 		StringBuilder sb = new StringBuilder();
@@ -149,8 +188,13 @@ public class StringUtils {
 	} 
 	
 	/**
-	 * �����ȡһ�������ַ�
-	 * @return
+	 * 
+	 * @Title:         getOneCn   
+	 * @Description:   TODO
+	 * @param:         @return      
+	 * @return:        String     
+	 * @date:          2019年9月9日 上午9:53:56   
+	 * @throws
 	 */
 	private static String getOneCn(){
 		
@@ -176,10 +220,17 @@ public class StringUtils {
         return str;
 	}
 	
-	/*
-	* �������ܣ������������ַ�����ȡһ��ֵ�����ں�����url��ַ����ȡIDֵ��
-	* �����ڡ�http://news.cnstock.com/news,yw-201908-4413224.htm���ѡ�4413224����ȡ������
-	*/
+	/**
+	 * 
+	 * @Title:         getPlaceholderValue   
+	 * @Description:   TODO
+	 * @param:         @param src
+	 * @param:         @param regex
+	 * @param:         @return      
+	 * @return:        String     
+	 * @date:          2019年9月9日 上午9:54:02   
+	 * @throws
+	 */
 	public static String getPlaceholderValue(String src, String regex){
 		//TODO ʵ�ִ���
         Pattern pattern = Pattern.compile(regex);// ƥ���ģʽ  
@@ -192,11 +243,15 @@ public class StringUtils {
         return "";
 	}
 	
-	//���Թ��߰���isNumber()��
 	/**
 	 * 
-	 * @param src
-	 * @return
+	 * @Title:         isNumber   
+	 * @Description:   TODO
+	 * @param:         @param src
+	 * @param:         @return      
+	 * @return:        boolean     
+	 * @date:          2019年9月9日 上午9:54:05   
+	 * @throws
 	 */
 	public static boolean isNumber(String src) {
 		//String regix="[0-9]{1,}(\\.?|[0-9]*)";
@@ -207,17 +262,30 @@ public class StringUtils {
 	}
 	
 	/**
-	 * ���Թ��߰���hasText()���÷����ǹ���String�����ո���ж��Ƿ���ֵ��
-	 * ������иù��ܷ�����������������������۷֡����û�и÷������������ڱ�д�÷���
-	 * @param src
-	 * @return
+	 * 
+	 * @Title:         hasText   
+	 * @Description:   TODO
+	 * @param:         @param src
+	 * @param:         @return      
+	 * @return:        boolean     
+	 * @date:          2019年9月9日 上午9:54:10   
+	 * @throws
 	 */
 	public static boolean hasText(String src) {
 		String string = src.replaceAll("\\s", "");
 		return (!"".equals(string));
 	}
 	
-	
+	/**
+	 * 
+	 * @Title:         toHtml1   
+	 * @Description:   TODO
+	 * @param:         @param text
+	 * @param:         @return      
+	 * @return:        String     
+	 * @date:          2019年9月9日 上午9:54:16   
+	 * @throws
+	 */
 	public static String toHtml1(String text) {
 		
 		String text2 = text.replaceAll("\\\r", "<br/>");

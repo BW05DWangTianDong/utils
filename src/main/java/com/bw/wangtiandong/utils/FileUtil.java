@@ -7,41 +7,40 @@ import org.apache.log4j.Logger;
 
 /**
  * 
- * @author zhuzg
- *
+ * @ClassName:     FileUtil   
+ * @Description:   TODO
+ * @author:        WTD
+ * @date:          2019年9月9日 上午9:52:02
  */
 public class FileUtil {
 	
 	public static Logger log = Logger.getLogger(FileUtil.class); 
 	
 	/**
-	 * �����Ŀ¼����������ļ���������Ŀ¼�е��ļ���Ҫɾ��
-	     ʹ�õݹ顣�漰���ݡ��ж�Ŀ¼�Ĵ����ԣ��ж��Ƿ�ΪĿ¼���ļ���ɾ����
-
-	 * @param fileName
+	 * 
+	 * @Title:         delFilePath   
+	 * @Description:   TODO
+	 * @param:         @param fileName      
+	 * @return:        void     
+	 * @date:          2019年9月9日 上午9:52:06   
+	 * @throws
 	 */
 	public static void delFilePath(String fileName) {
 		
 		File file = new File(fileName);
-		// �ļ�������  ��ֱ�ӷ���
 		if(!file.exists()) {
 			return;
 		}
 		
-		// ������ļ�  ��ɾ���󷵻�
 		if(file.isFile()) {
 			log.info(" ɾ���ļ� " + fileName);
 			file.delete();
 			return;
 		}
 		
-		//�����Ŀ¼
 		if(file.isDirectory()) {
-			// ���г�Ŀ¼�����е���Ŀ¼���ļ�
 			 String[] list = file.list();
-			 //���ÿһ��
 			 for (String subPath : list) {
-				 //����ɾ������
 				 delFilePath(fileName + "/" + subPath);
 			}
 			 log.info(" ------------ ɾ���ļ� �� �� " + fileName); 
@@ -51,30 +50,36 @@ public class FileUtil {
 		
 	}
 	
-	//3.5.2��ȡ�ļ���չ��
 	/**
 	 * 
-	 * @param fileName
-	 * @return
+	 * @Title:         getSuffix   
+	 * @Description:   TODO
+	 * @param:         @param fileName
+	 * @param:         @return      
+	 * @return:        String     
+	 * @date:          2019年9月9日 上午9:52:19   
+	 * @throws
 	 */
 	public static String getSuffix(String fileName) {
 		int dotIndex = fileName.lastIndexOf('.');
-		//û����չ��
 		if(dotIndex<0) {
 			return "";
 		}
-		//���һλ�� .
 		if(dotIndex>=fileName.length()) {
 			return "";
 		}
 		//
 		return fileName.substring(dotIndex+1);
 	}
-	
 	/**
 	 * 
-	 * @param key
-	 * @return
+	 * @Title:         getSystemProp   
+	 * @Description:   TODO
+	 * @param:         @param key
+	 * @param:         @return      
+	 * @return:        String     
+	 * @date:          2019年9月9日 上午9:52:27   
+	 * @throws
 	 */
 	public static String getSystemProp(String key) {
 		
@@ -84,7 +89,15 @@ public class FileUtil {
 	}
 	
 	/**
-	 * �����ļ���ָ����λ��С��ʾ
+	 * 
+	 * @Title:         getSize   
+	 * @Description:   TODO
+	 * @param:         @param fileName
+	 * @param:         @param fileUnit
+	 * @param:         @return      
+	 * @return:        long     
+	 * @date:          2019年9月9日 上午9:52:30   
+	 * @throws
 	 */
 	public long  getSize(String fileName,FileUnit fileUnit) {
 		File file = new File(fileName);

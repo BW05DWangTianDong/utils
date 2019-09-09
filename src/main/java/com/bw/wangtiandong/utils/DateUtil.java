@@ -7,23 +7,33 @@ import java.util.Date;
 
 /**
  * 
- * @author zhuzg
+ * @author wangtiandong
  *
  */
 public class DateUtil {
 	/**
 	 * 
-	 * @param futureDate
-	 * @return
+	 * @Title:         getRemainDays   
+	 * @Description:   TODO
+	 * @param:         @param futureDate
+	 * @param:         @return      
+	 * @return:        int     
+	 * @date:          2019年9月9日 上午9:51:33   
+	 * @throws
 	 */
 	public int getRemainDays(Date futureDate) {
 		return (int)(futureDate.getTime()-new Date().getTime())/1000/3600/24;	
 	}
 	
-	/**
-	 * 3.4.4�ж��Ƿ�Ϊ����
-	 * @param date
-	 * @return
+	/***
+	 * 
+	 * @Title:         isToday   
+	 * @Description:   TODO
+	 * @param:         @param date
+	 * @param:         @return      
+	 * @return:        boolean     
+	 * @date:          2019年9月9日 上午9:51:38   
+	 * @throws
 	 */
 	public static boolean isToday(Date date) {
 		
@@ -36,9 +46,14 @@ public class DateUtil {
 	
 	
 	/**
-	 * 3.4.4�ж��Ƿ�Ϊ����
-	 * @param date
-	 * @return
+	 * 
+	 * @Title:         isCurrentMonth   
+	 * @Description:   TODO
+	 * @param:         @param date
+	 * @param:         @return      
+	 * @return:        boolean     
+	 * @date:          2019年9月9日 上午9:51:42   
+	 * @throws
 	 */
 	public static boolean isCurrentMonth(Date date) {
 		
@@ -64,9 +79,15 @@ public class DateUtil {
 	
 	
 	/**
-	 * 3.4.7����ʱ����󣬳�ʼ��������ĩ�����һ��  ���� 2019/11/30 23:59:59 
-	 * @return
-	 * @throws ParseException 
+	 * 
+	 * @Title:         getMonthEnd   
+	 * @Description:   TODO
+	 * @param:         @param date
+	 * @param:         @return
+	 * @param:         @throws ParseException      
+	 * @return:        Date     
+	 * @date:          2019年9月9日 上午9:51:46   
+	 * @throws
 	 */
 	public static Date getMonthEnd(Date date) throws ParseException {
 		

@@ -7,15 +7,22 @@ import java.io.OutputStream;
 
 /**
  * 
- * @author zhuzg
- *
+ * @ClassName:     StreamUtils   
+ * @Description:   TODO
+ * @author:        WTD
+ * @date:          2019年9月9日 上午9:52:42
  */
 public class StreamUtils {
 	
 	/**
-	 * �ر���
-	 * @param closeables
-	 * @throws IOException 
+	 * 
+	 * @Title:         closeStream   
+	 * @Description:   TODO
+	 * @param:         @param closeables
+	 * @param:         @throws IOException      
+	 * @return:        void     
+	 * @date:          2019年9月9日 上午9:52:45   
+	 * @throws
 	 */
 	public static void closeStream(Closeable ...closeables) throws IOException {
 		for (Closeable closeable : closeables) {
@@ -26,9 +33,14 @@ public class StreamUtils {
 	
 	/**
 	 * 
-	 * @param is
-	 * @param os
-	 * @throws IOException 
+	 * @Title:         copyStream   
+	 * @Description:   TODO
+	 * @param:         @param is
+	 * @param:         @param os
+	 * @param:         @throws IOException      
+	 * @return:        void     
+	 * @date:          2019年9月9日 上午9:52:51   
+	 * @throws
 	 */
 	public static void copyStream(InputStream is,OutputStream os) throws IOException {
 		
@@ -36,7 +48,6 @@ public class StreamUtils {
 		while(is.read(b)>0) {
 			os.write(b);
 		}
-		//ˢ��
 		os.flush();
 		
 	}
