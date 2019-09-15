@@ -1,6 +1,12 @@
 package com.bw.wangtiandong.utils;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.lang.reflect.Constructor;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -124,6 +130,24 @@ public class FileUtil {
 	}
 	
 	
+	public static List<Object> fileToBean(String fileName,Constructor constructor) throws Exception{
+		
+		File file=new File(fileName);
+		
+		BufferedReader br=new BufferedReader(new FileReader(file));
+		
+		String str=null;
+		
+		List<Object> list= new ArrayList<Object>();
+		
+		while((str=br.readLine())!=null) {
+			String[] strings = str.split("\\|");
+			Object object = constructor.newInstance(strings);
+			list.add(object);
+		}
+		
+		return list;
+	}
 	
 	
 }
