@@ -130,7 +130,7 @@ public class FileUtil {
 	}
 	
 	
-	public static List<Object> fileToBean(String fileName,Constructor constructor) throws Exception{
+	public static List<Object> fileToBean(String fileName,Constructor constructor,String regex) throws Exception{
 		
 		File file=new File(fileName);
 		
@@ -141,7 +141,26 @@ public class FileUtil {
 		List<Object> list= new ArrayList<Object>();
 		
 		while((str=br.readLine())!=null) {
-			String[] strings = str.split("\\|");
+			String[] strings = str.split(regex);
+			Object object = constructor.newInstance(strings);
+			list.add(object);
+		}
+		
+		return list;
+	}
+	
+	public static List<Object> fileToBeanExam(String fileName,Constructor constructor) throws Exception{
+		
+		File file=new File(fileName);
+		
+		BufferedReader br=new BufferedReader(new FileReader(file));
+		
+		String str=null;
+		
+		List<Object> list= new ArrayList<Object>();
+		
+		while((str=br.readLine())!=null) {
+			String[] strings = str.split("\\|\\|");
 			Object object = constructor.newInstance(strings);
 			list.add(object);
 		}
